@@ -1,0 +1,23 @@
+@media print {
+  .m-portlet__head, .m-subheader, header.m-header {
+    display: none !important;
+  }
+  .no-print {
+    display: none !important;
+    height: 0;
+  }
+  .no-print, .no-print * {
+    display: none !important;
+    height: 0;
+  }
+  th {
+    font-size: 17pt;
+  }
+  td {
+    font-size: 16pt;
+  }
+}
+
+input.datepicker {
+  width: 100%;
+}
