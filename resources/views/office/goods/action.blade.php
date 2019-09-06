@@ -2,6 +2,9 @@
     @csrf    
     @method('DELETE')
     <td>
+        <a href="{{ route($controller. '.show', $data->id) }}" class="btn btn-info btn-sm">
+            Detail
+        </a>
         <a href="{{ route($controller. '.edit', $data->id) }}" class="btn btn-info btn-sm">
             Ubah
         </a>

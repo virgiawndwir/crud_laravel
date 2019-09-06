@@ -70,10 +70,10 @@
                             <tr>
                                 <td>{{ $data->id }}</td>                        
                                 <td>{{ $data->name }}</td>
-                                <td>{{ $data->price }}</td>
+                                <td>Rp. {{ number_format($data->price) }}</td>
                                 <td>{{ $data->category }}</td>
                                 <td>{{ $data->stock }}</td>
-                                <td><img src="{{ url( $data->image ) }}" height="100px" width="100px"></td>
+                                <td><img src="{{ url( $data->image ) }}" height="130px" width="250px"></td>
                                 
                                 @include($view. '.action')
                             </tr>    

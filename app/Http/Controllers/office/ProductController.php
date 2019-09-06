@@ -133,7 +133,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $datas = $this->model->whereId($id)->get();
+        // dd($datas);
+        return view($this->view.'.show')->with(compact('id', 'datas'));
     }
 
     /**

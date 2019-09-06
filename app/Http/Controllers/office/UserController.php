@@ -143,7 +143,7 @@ class UserController extends Controller
         $data = (object) $this->model->findOrFail($id);
         $validator = JsValidator::formRequest('App\Http\Requests\\' . $this->validate);
         
-        return view($this->view . '.edit')->with(compact('id', 'data'));
+        return view($this->view . '.edit')->with(compact('id', 'data', 'validator'));
     }
 
     /**
@@ -160,9 +160,11 @@ class UserController extends Controller
 
         DB::beginTransaction();
         try {
-            if($request->password) {
-                $input['password'] = Hash::make($request->password);
+            if($input['password_confirm'] != $input['password']){
+                swal()->error($this->title, "Konfirmasi password tidak sesuai!");
+                return redirect()->route($this->controller . '.create');
             }
+            $input['password'] = Hash::make($request->password);
             $data->fill($input)->save();
             DB::commit();
 

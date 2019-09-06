@@ -119,7 +119,8 @@ class GoodsController extends Controller
      */
     public function show($id)
     {
-        //
+        $datas = $this->model->whereId($id)->get();
+        return view($this->view.'.show')->with(compact('id','datas'));
     }
 
     /**

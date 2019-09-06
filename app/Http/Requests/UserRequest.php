@@ -26,8 +26,8 @@ class UserRequest extends FormRequest
     {
         return [
             'name'      => 'required',
-            'email'     => 'required',
-            'password'  => 'required|min:8',
+            'email'     => 'required|email',
+            'password'  => 'required|min:6',
         ];
     }
 
@@ -39,7 +39,7 @@ class UserRequest extends FormRequest
             'email.email'       => 'Alamat email tidak benar',
             'email.unique'      => 'Email sudah terdaftar',
             'password.required' => 'Password harus diisi',
-            'password.min'      => 'Password minimal 8 karakter'
+            'password.min'      => 'Password minimal 6 karakter'
         ];
 
     }
